@@ -70,7 +70,7 @@ namespace TestShopping
             float expectedArticlePriced = 4.5f;
             Article expectedArticle = new Article(expectedArticlePriced);
             int expectedQuantity = 2;
-            CartItem expectedCartItem1 = new CartItem(expectedArticle, expectedQuantity);
+            CartItem expectedCartItem = new CartItem(expectedArticle, expectedQuantity);
 
             List<CartItem> expectedCartItems = new List<CartItem> { expectedCartItem };
             Assert.That(_cart.CartItems.Count(), Is.EqualTo(0));
