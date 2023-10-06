@@ -2,11 +2,13 @@ using Shopping;
 
 namespace TestShopping
 {
-    public class TestArticle
+    public class TestArticleItem
     {
         #region private attributes
+        private CartItem _cartItem = null;
         private Article? _article = null;
         private float _price = 0f;
+        private int _quantity = 0;
         #endregion private attributes
 
         [SetUp]
@@ -14,10 +16,12 @@ namespace TestShopping
         {
             _price = 20.45f;
             _article = new Article(_price);
+            _quantity = 1;
+            _cartItem = new CartItem(_article, _quantity);
         }
 
         [Test]
-        public void Price_AfterInstantiation_Success()
+        public void AllProperties_AfterInstantiation_Success()
         {
             //given
             //refer to Setup
@@ -26,7 +30,8 @@ namespace TestShopping
             //Event will be triggered by constructor
 
             //then
-            Assert.AreEqual(_price, _article.Price);
+            Assert.AreEqual(_cartItem.Article.Price, _price);
+            Assert.AreEqual(_cartItem.Quantity, _quantity);
         }
     }
 }
