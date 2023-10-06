@@ -37,6 +37,14 @@ namespace Shopping
             }
         }
 
+        public float Price
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public bool? IsReleased { get; set; }
         #endregion public methods
     }

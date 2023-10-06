@@ -19,7 +19,8 @@ namespace TestShopping
         {
             //given
             //refer to Setup
-            Article expectedArticle = new Article(4.5f);
+            float articlePrice = 4.5f;
+            Article expectedArticle = new Article(articlePrice);
             int expectedQuantity = 1;
             CartItem expectedCartItem = new CartItem(expectedArticle, expectedQuantity);
             List<CartItem> expectedCartItems = new List<CartItem> { expectedCartItem };
@@ -30,6 +31,7 @@ namespace TestShopping
 
             //then
             Assert.That(_cart.CartItems.Count(), Is.EqualTo(1));
+            Assert.That(_cart.Price, Is.EqualTo(articlePrice));
         }
     }
 }
