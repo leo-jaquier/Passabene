@@ -35,5 +35,8 @@ namespace Shopping
             }
         }
         #endregion public methods
+
+        public class CartItemException : Exception { }
+        public class WrongQuantityException : CartItemException { }
     }
 }
