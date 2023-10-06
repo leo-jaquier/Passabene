@@ -3,7 +3,7 @@ using static Shopping.CartItem;
 
 namespace TestShopping
 {
-    public class TestArticleItem
+    public class TestCartItem
     {
         #region private attributes
         private CartItem _cartItem = null;
