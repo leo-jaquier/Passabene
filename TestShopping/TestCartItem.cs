@@ -6,7 +6,7 @@ namespace TestShopping
     public class TestCartItem
     {
         #region private attributes
-        private CartItem _cartItem = null;
+        private CartItem? _cartItem = null;
         private Article? _article = null;
         private float _price = 0f;
         private int _quantity = 0;
