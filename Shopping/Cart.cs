@@ -11,7 +11,7 @@ namespace Shopping
         #region public methods
         public void Add(List<CartItem> articleItems)
         {
-            _articles = articles;
+           _articleItems=articleItems;
         }
 
         public List<CartItem> Remove(Boolean clearCart = false)
