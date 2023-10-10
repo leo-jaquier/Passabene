@@ -1,8 +1,9 @@
-﻿using System.Net.Http.Headers;
+﻿using System;
+using System.Net.Http.Headers;
 
 namespace Shopping
 {
-    public class Cart : ICollectionOfArticles
+    public class Cart
     {
         #region private attributes
         private List<CartItem> _cartItems = new List<CartItem>();
@@ -11,29 +12,37 @@ namespace Shopping
         #region public methods
         public void Add(List<CartItem> cartItems)
         {
-            throw new NotImplementedException();
+            _cartItems = cartItems;
         }
 
-        public List<CartItem> Remove(Boolean clearCart = false)
+        public void Remove(List<CartItem> cartItemsToRemove)
         {
-            throw new NotImplementedException();
-        }
+            List<CartItem> articlesAfterRemoving = new List<CartItem>();
 
-        public List<CartItem> Remove(CartItem cartItemToRemove)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Release()
-        {
-            throw new NotImplementedException();
+            foreach (CartItem cartItem in _cartItems)
+            {
+                bool found = false;
+                foreach (CartItem cartItemToRemove in cartItemsToRemove)
+                {
+                    if (cartItemToRemove.Article.Description == cartItem.Article.Description)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    articlesAfterRemoving.Add(cartItem);
+                }
+            }
+            _cartItems = articlesAfterRemoving;
         }
 
         public List<CartItem> CartItems
         {
             get
             {
-                throw new NotImplementedException();
+                return _cartItems;
             }
         }
 
@@ -41,11 +50,14 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                float price = 0;
+                foreach (CartItem cartItem in _cartItems)
+                {
+                    price += cartItem.Article.Price * cartItem.Quantity;
+                }
+                return price;
             }
         }
-
-        public bool? IsReleased { get; set; }
         #endregion public methods
     }
 }
