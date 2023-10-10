@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System;
+using System.Net.Http.Headers;
 
 namespace Shopping
 {
@@ -10,6 +11,11 @@ namespace Shopping
 
         #region public methods
         public void Add(List<CartItem> cartItems)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(List<CartItem> cartItemsToRemove)
         {
             throw new NotImplementedException();
         }
@@ -29,8 +35,6 @@ namespace Shopping
                 throw new NotImplementedException();
             }
         }
-
-        public bool? IsReleased { get; set; }
         #endregion public methods
     }
 }
