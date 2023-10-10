@@ -2,29 +2,14 @@
 
 namespace Shopping
 {
-    public class Cart : ICollectionOfArticles
+    public class Cart
     {
         #region private attributes
-        private List<CartItem> _articleItems = new List<CartItem>();
+        private List<CartItem> _cartItems = new List<CartItem>();
         #endregion private attributes
 
         #region public methods
-        public void Add(List<CartItem> articleItems)
-        {
-           _articleItems=articleItems;
-        }
-
-        public List<CartItem> Remove(Boolean clearCart = false)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<CartItem> Remove(CartItem cartItemToRemove)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Release()
+        public void Add(List<CartItem> cartItems)
         {
             throw new NotImplementedException();
         }
