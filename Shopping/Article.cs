@@ -11,6 +11,23 @@
         {
             throw new NotImplementedException();
         }
+
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
         public float Price
         {
             get
