@@ -1,4 +1,6 @@
-﻿namespace Shopping
+﻿using System.Text.RegularExpressions;
+
+namespace Shopping
 {
     public class Article
     {
@@ -33,7 +35,20 @@
             }
             set
             {
-                throw new NotImplementedException();
+                char specialChar = '+';
+                if (value.Length >50)
+                {
+                    throw new TooLongDescriptionException();
+                }
+                if (value.Contains(specialChar))
+                {
+                    throw new SpecialCharInDescriptionException();
+                }
+                if (value.Split(' ').Length<=1)
+                {
+                    throw new TooShortDescriptionException();
+                }
+                _description = value;
             }
         }
 
